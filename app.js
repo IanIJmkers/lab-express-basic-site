@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const PORT = 5000;
 
+//Make everything inside of public/available
+app.use(express.static(path.join(__dirname + 'public')))
+
 //All the routes here
 app.get("/nikis_best", (req, res) => {
     res.sendFile(__dirname + '/views/niki.html')
